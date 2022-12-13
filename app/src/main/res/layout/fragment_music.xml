@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/music_bg"
     tools:context="ui.MusicFragment">
 
     <TextView
@@ -13,7 +14,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:ellipsize="end"
-        android:text="Connecting..."
+        android:text="@string/connecting_text"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="italic"
@@ -27,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:text="true"
+        android:text="@string/true_text"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="64dp"
-        android:text="false"
+        android:text="@string/false_text"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="retry"
+        android:text="@string/retry_text"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="true"
+        android:text="@string/false_text"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/true_button"
         app:layout_constraintStart_toStartOf="@+id/true_button"
@@ -72,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="false"
+        android:text="@string/false_text"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/false_button"
         app:layout_constraintStart_toStartOf="@+id/false_button"
@@ -92,9 +93,9 @@
             android:id="@+id/undertotal_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="24dp"
-            android:text="Total:"
+            android:text="@string/total_text"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/score_text"
             app:layout_constraintEnd_toEndOf="parent"
@@ -104,12 +105,12 @@
             android:id="@+id/total_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
             android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/question_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="0" />
 
     </LinearLayout>
 
@@ -127,9 +128,9 @@
             android:id="@+id/underscore_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="24dp"
-            android:text="Correct:"
+            android:text="@string/correct_text"
             android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/score_text"
             app:layout_constraintEnd_toEndOf="parent"
@@ -139,12 +140,12 @@
             android:id="@+id/score_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0"
             android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@+id/question_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="0" />
 
     </LinearLayout>
 

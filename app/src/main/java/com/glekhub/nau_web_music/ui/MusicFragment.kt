@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.glekhub.nau_web_music.Constants.AMOUNT
+import com.glekhub.nau_web_music.R
 import com.glekhub.nau_web_music.databinding.FragmentMusicBinding
 import com.glekhub.nau_web_music.viewmodel.MusicViewModel
 import com.glekhub.nau_web_music.viewmodel.MusicViewModelFactory
@@ -43,9 +44,9 @@ class MusicFragment : Fragment() {
                 if (viewModel.currentQuestionCount.value != AMOUNT - 1) {
                     if (answer == "True") {
                         refreshState()
-                        trueText.text = "Correct"
+                        trueText.text = getString(R.string.correct)
                     } else {
-                        trueText.text = "Incorrect"
+                        trueText.text = getString(R.string.incorrect)
                     }
                     refreshCount()
                 } else showFinalScoreDialog()
@@ -56,9 +57,9 @@ class MusicFragment : Fragment() {
                 if (viewModel.currentQuestionCount.value != AMOUNT - 1) {
                     if (answer == "False") {
                         refreshState()
-                        falseText.text = "Correct"
+                        falseText.text = getString(R.string.correct)
                     } else {
-                        falseText.text = "Incorrect"
+                        falseText.text = getString(R.string.incorrect)
                     }
                     refreshCount()
                 } else showFinalScoreDialog()
@@ -72,7 +73,7 @@ class MusicFragment : Fragment() {
             viewModel.currentQuestionCount.observe(viewLifecycleOwner) { count ->
                 viewModel.resultLiveData.observe(viewLifecycleOwner) { response ->
                     if (response == null) {
-                        questionText.text = "No connection"
+                        questionText.text = getString(R.string.no_connection)
                         retryButton.visibility = View.VISIBLE
                         retryButton.setOnClickListener {
                             viewModel.getResult()

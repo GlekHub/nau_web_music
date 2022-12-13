@@ -2,4 +2,18 @@
     <string name="app_name">nau_web_music</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_connection">No connection</string>
+    <string name="correct">Correct</string>
+    <string name="incorrect">Incorrect</string>
+    <string name="true_text">true</string>
+    <string name="false_text">false</string>
+    <string name="retry_text">retry</string>
+    <string name="total_text">Total:</string>
+    <string name="correct_text">Correct:</string>
+    <string name="connecting_text">Connecting…</string>
+    <string name="medium_text">Medium</string>
+    <string name="easy_text">Easy</string>
+    <string name="music_quiz_text">music quiz</string>
+    <string name="start_text">start</string>
+    <string name="select_difficulty_text">Select difficulty</string>
 </resources>
