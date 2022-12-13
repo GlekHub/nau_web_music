@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.glekhub.nau_web_music.Constants.AMOUNT
 import com.glekhub.nau_web_music.Constants.CATEGORY
-import com.glekhub.nau_web_music.Constants.DIFFICULTY
 import com.glekhub.nau_web_music.Constants.TYPE
 import com.glekhub.nau_web_music.repository.MusicRepository
 import kotlinx.coroutines.delay
@@ -29,14 +28,16 @@ class MusicViewModel : ViewModel() {
     val currentQuestionCount: LiveData<Int>
         get() = _currentQuestionCount
 
-    init {
-        getResult()
-    }
+    private val currentDifficulty = MutableLiveData("easy")
+
+//    init {
+//        getResult()
+//    }
 
     fun getResult() {
         viewModelScope.launch {
             _resultLiveData.postValue(
-                repository.getQuestion(AMOUNT, CATEGORY, DIFFICULTY, TYPE)
+                repository.getQuestion(AMOUNT, CATEGORY, currentDifficulty.value.toString(), TYPE)
             )
         }
     }
@@ -60,5 +61,11 @@ class MusicViewModel : ViewModel() {
         getResult()
         _currentQuestionCount.value = 0
         _currentState.value = 0
+    }
+
+    fun setDifficulty(isChecked: Boolean) {
+        if (isChecked) currentDifficulty.value = "medium"
+        Log.d("GG", "$isChecked\n$currentDifficulty")
+        getResult()
     }
 }
