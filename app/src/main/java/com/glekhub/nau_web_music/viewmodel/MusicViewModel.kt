@@ -30,9 +30,9 @@ class MusicViewModel : ViewModel() {
 
     private val currentDifficulty = MutableLiveData("easy")
 
-//    init {
-//        getResult()
-//    }
+    private val _currentFragment = MutableLiveData(0)
+    val currentFragment: LiveData<Int>
+        get() = _currentQuestionCount
 
     fun getResult() {
         viewModelScope.launch {
@@ -66,6 +66,7 @@ class MusicViewModel : ViewModel() {
     fun setDifficulty(isChecked: Boolean) {
         if (isChecked) currentDifficulty.value = "medium"
         Log.d("GG", "$isChecked\n$currentDifficulty")
+        _currentFragment.value = 1
         getResult()
     }
 }
